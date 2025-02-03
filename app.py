@@ -69,3 +69,11 @@ if clicked:
         with st.spinner("Loading page website..."):
             content = automate_Cultivated_task("Ca_00004")
             st.write(content)
+
+tid="Ca_00004"
+html_Cultivated_page_source = automate_Cultivated_task(tid)
+b64_html = base64.b64encode(html_Cultivated_page_source.encode()).decode()  # Convert to base64
+html_href = f'<a href="data:text/html;base64,{b64_html}" download="{tid}_Cultivated_SNP.html">Download {tid} Cultivated SNP as .html</a>'
+st.markdown(html_href, unsafe_allow_html=True)
+iframe_CODE=f'<iframe src="data:text/html;base64,{b64_html}" width="100%" height="600"></iframe>'
+st.components.v1.html(iframe_CODE, height=600)
