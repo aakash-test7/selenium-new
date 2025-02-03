@@ -1,0 +1,12 @@
+pandas
+numpy
+matplotlib
+seaborn
+openpyxl
+selenium
+webdriver-manager
+beautifulsoup4
+requests
+streamlit
+google-cloud-storage
+google-auth
